@@ -14,7 +14,7 @@ services:
     environment:
       REDIS_HOST: "redis"
       REDIS_PASS: "moneyprintergobrrr"
-      NITTER_THEME: "auto_(twitter)"
+      #NITTER_THEME: "auto_(twitter)"
     volumes:
       - ./data/nitter:/data
     depends_on:
