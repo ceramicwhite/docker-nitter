@@ -28,16 +28,16 @@ RUN nimble md
 FROM alpine:3.16.2
 
 ENV REDIS_HOST="redis" \
-    REDIS_PASS="moneyprintergobrrr" \
-    REDIS_PORT=6379 \
-    NITTER_HTTPS="false" \
-    NITTER_HOST="nitter.net" \
-    NITTER_NAME="nitter" \
-    NITTER_THEME="auto_(twitter)" \
-    REPLACE_TWITTER="nitter.net" \
-    REPLACE_YOUTUBE="piped.kavin.rocks" \
-    REPLACE_REDDIT="teddit.net" \
-    REPLACE_INSTAGRAM=""
+        REDIS_PASS="moneyprintergobrrr" \
+        REDIS_PORT=6379 \
+        NITTER_HTTPS="false" \
+        NITTER_HOST="nitter.net" \
+        NITTER_NAME="nitter" \
+        NITTER_THEME="auto_(twitter)" \
+        REPLACE_TWITTER="nitter.net" \
+        REPLACE_YOUTUBE="piped.kavin.rocks" \
+        REPLACE_REDDIT="teddit.net" \
+        REPLACE_INSTAGRAM=""
 
 COPY ./entrypoint.sh /entrypoint.sh
 COPY ./nitter.conf.pre /dist/nitter.conf.pre

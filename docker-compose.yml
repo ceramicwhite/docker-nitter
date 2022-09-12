@@ -2,8 +2,7 @@ version: '3.7'
 
 services:
   web:
-    image: ceramicwhite/nitter:build-20220912@sha256:a9ae4a90b9ebedd7cb9c9a7ec0c85c8107807dfc12b2125233958f536b5af733
-    #image: ceramicwhite/nitter:build-20220908@sha256:cfb1227aca5014804c47d10d7ff77f24416a3fd571549eaeee9850f915507447
+    image: ceramicwhite/nitter:build-20220908@sha256:cfb1227aca5014804c47d10d7ff77f24416a3fd571549eaeee9850f915507447
     container_name: nitter
     restart: on-failure
     stop_grace_period: 1m
@@ -14,7 +13,7 @@ services:
     environment:
       REDIS_HOST: "redis"
       REDIS_PASS: "moneyprintergobrrr"
-      #NITTER_THEME: "auto_(twitter)"
+      NITTER_THEME: '"auto_(twitter)"'
     volumes:
       - ./data/nitter:/data
     depends_on:
@@ -27,4 +26,3 @@ services:
     volumes:
       - ./data/redis:/data
     command: "redis-server --save 60 1 --loglevel warning --requirepass moneyprintergobrrr"
-
