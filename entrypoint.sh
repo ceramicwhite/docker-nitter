@@ -23,9 +23,6 @@ build_working_dir()
 
     [ -d $WORKD/tmp ]         || mkdir -p $WORKD/tmp
     [ -d $WORKD/public ]      || cp -rf $BUILD/public      $WORKD/.
-
-    chown -R www-data:www-data $WORKD
-    chmod 777 $WORKD
 }
 
 construct_nitter_conf()
@@ -44,13 +41,12 @@ construct_nitter_conf()
 	    | sed "s/REPLACE_REDDIT/$REPLACE_REDDIT/g" \
 	    | sed "s/REPLACE_INSTAGRAM/$REPLACE_INSTAGRAM/g" > $WORKD/nitter.conf
     fi
-    chown www-data:www-data $WORKD/nitter.conf
 }
 
 run_nitter_program()
 {
     cd $WORKD
-    exec su-exec www-data:www-data /usr/local/bin/nitter
+	exec /usr/local/bin/nitter
 }
 
 # -- program starts
